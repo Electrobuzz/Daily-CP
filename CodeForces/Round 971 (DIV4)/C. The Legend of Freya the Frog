@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i, a, b) for(int i = a; i < (b); ++i)
+#define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+#define push_back pb;
+
+void solve(){
+    int x,y,k;
+    cin>>x>>y>>k;
+    if(x+y == 0){
+        cout<<0<<endl;
+        return;
+    }
+    int ans=0;
+    int cx,cy;
+    if((x/k)*k < x) cx = x/k +1;
+    else cx = x/k;
+
+    if((y/k)*k < y) cy = y/k +1;
+    else cy = y/k;
+    if(cx>cy){
+        ans+= 2*cx -1;
+    }
+    else{
+        ans += 2*cy;
+    }
+   
+    cout<<ans<<endl;
+
+}
+
+int main() {
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(cin.failbit);
+
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif // ONLINE_JUDGE
+
+    int tc;
+    cin>>tc;
+    while(tc--){
+        solve();
+    }
+}
